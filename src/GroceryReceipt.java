@@ -2,9 +2,7 @@ import java.util.Scanner;
 
 public class GroceryReceipt {
     public static void main(String[] args) {
-        double price1;
-        double price2;
-        double price3;
+        double price1, price2, price3;
         String isMember;
 
         // constants
