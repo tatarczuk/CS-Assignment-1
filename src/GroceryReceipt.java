@@ -2,43 +2,43 @@ import java.util.Scanner;
 
 public class GroceryReceipt {
     public static void main(String[] args) {
-        double price1, price2, price3;
+        float price1, price2, price3;
         String isMember;
 
         // constants
-        final double GST_RATE = 0.05;
-        final double PST_RATE = 0.07;
-        final double LOYALTY_DISCOUNT = 0.03;
+        final float GST_RATE = 0.05f;
+        final float PST_RATE = 0.07f;
+        final float LOYALTY_DISCOUNT = 0.03f;
 
         // ask required information
         Scanner input = new Scanner(System.in);
         System.out.println("Enter the price of item 1: ");
-        price1 = input.nextDouble();
+        price1 = input.nextFloat();
         System.out.println("Enter the price of item 2: ");
-        price2 = input.nextDouble();
+        price2 = input.nextFloat();
         System.out.println("Enter the price of item 3: ");
-        price3 = input.nextDouble();
+        price3 = input.nextFloat();
         System.out.println("Are you a member? (y/n): ");
         // make sure to read the next line before input for "isMember"
         input.nextLine();
         isMember = input.nextLine();
 
         // add prices for subtotal
-        double subtotal = price1 + price2 + price3;
+        float subtotal = price1 + price2 + price3;
         // discount default is 0, ability to add onto it later
-        double discount = 0;
+        float discount = 0;
         if(isMember.equals("y")) {
             // calculates loyalty discount
             discount = -LOYALTY_DISCOUNT * subtotal;
         }
         // takes away discount from subtotal for taxable amount
-        double taxableAmount = subtotal + discount;
+        float taxableAmount = subtotal + discount;
         // calculates gst
-        double gst = taxableAmount * GST_RATE;
+        float gst = taxableAmount * GST_RATE;
         //calculates pst
-        double pst = taxableAmount * PST_RATE;
+        float pst = taxableAmount * PST_RATE;
         // adds pst and gst to taxable amount for total
-        double total = taxableAmount + gst + pst;
+        float total = taxableAmount + gst + pst;
 
         // format and output the calculations
         System.out.println("Subtotal: " + convToCAD(subtotal));
@@ -52,15 +52,15 @@ public class GroceryReceipt {
     }
 
     // convert doubles to strings formatted for CAD
-    private static String convToCAD(double n) {
+    private static String convToCAD(float n) {
         String s = "";
-        double abs = n;
+        float abs = n;
         // require the double to be absolute so the sign can be put behind the "$" symbol
-        if (n < 0) {
+        if (n < 0f) {
             s += '-';
-            abs *= -1;
+            abs *= -1f;
         }
-        abs = Math.round(abs*100.0)/100.0;
+        abs = Math.round(abs*100.0f)/100.0f;
         s += "$"+abs+" CAD";
         return s;
     }

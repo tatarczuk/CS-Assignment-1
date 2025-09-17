@@ -4,7 +4,7 @@ public class StudentProfile {
     public static void main(String[] args) {
         String name;
         int yearOfStudy;
-        double gpa;
+        float gpa;
         int creditsCompleted;
         Scanner input = new Scanner(System.in);
 
@@ -14,7 +14,7 @@ public class StudentProfile {
         System.out.println("Enter year of study: ");
         yearOfStudy = input.nextInt();
         System.out.println("Enter GPA: ");
-        gpa = input.nextDouble();
+        gpa = input.nextFloat();
         System.out.println("Enter credits completed: ");
         creditsCompleted = input.nextInt();
 
