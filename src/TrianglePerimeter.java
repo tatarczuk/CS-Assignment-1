@@ -15,7 +15,7 @@ public class TrianglePerimeter
         System.out.print("Enter the length of the second side of the triangle: "); // was missing semicolon
         side2 = input.nextDouble();
         System.out.print("Enter the length of the third side of the triangle: ");
-        side3 = input.nextDouble();
+        side3 = input.nextDouble(); // "Double" wasn't capitalised
         perimeter = side1 + side2 + side3; // "=" was "==", was missing semicolon
         System.out.println("The perimeter of the triangle is: " + perimeter);
     }

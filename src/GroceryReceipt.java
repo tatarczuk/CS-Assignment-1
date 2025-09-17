@@ -25,15 +25,21 @@ public class GroceryReceipt {
         input.nextLine();
         isMember = input.nextLine();
 
-        // calculations
+        // add prices for subtotal
         double subtotal = price1 + price2 + price3;
+        // discount default is 0, ability to add onto it later
         double discount = 0;
         if(isMember.equals("y")) {
+            // calculates loyalty discount
             discount = -LOYALTY_DISCOUNT * subtotal;
         }
+        // takes away discount from subtotal for taxable amount
         double taxableAmount = subtotal + discount;
+        // calculates gst
         double gst = taxableAmount * GST_RATE;
+        //calculates pst
         double pst = taxableAmount * PST_RATE;
+        // adds pst and gst to taxable amount for total
         double total = taxableAmount + gst + pst;
 
         // format and output the calculations
