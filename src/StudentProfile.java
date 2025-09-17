@@ -8,6 +8,7 @@ public class StudentProfile {
         int creditsCompleted;
         Scanner input = new Scanner(System.in);
 
+        // ask required information
         System.out.println("Enter name: ");
         name = input.nextLine();
         System.out.println("Enter year of study: ");
@@ -17,6 +18,7 @@ public class StudentProfile {
         System.out.println("Enter credits completed: ");
         creditsCompleted = input.nextInt();
 
+        // format and output given information
         System.out.println("Name: " + name + "  Year: " + yearOfStudy + "   GPA: " + gpa + "    Credits Completed: " + creditsCompleted);
 
     }
